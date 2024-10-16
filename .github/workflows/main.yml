@@ -93,10 +93,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push to DockerHub
         uses: docker/build-push-action@v4
-          with:
-            context: ./frontend/
-            push: true
-            tags: closedeyevisuals/taski_frontend:latest
+        with:
+          context: ./frontend/
+          push: true
+          tags: closedeyevisuals/taski_frontend:latest
   build_gateway_and_push_to_docker_hub:
     name: Push gateway Docker image to DockerHub
     runs-on: ubuntu-latest
@@ -112,7 +112,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push to DockerHub
         uses: docker/build-push-action@v4
-          with:
-            context: ./gateway/
-            push: true
-            tags: closedeyevisuals/taski_gateway:latest
+        with:
+          context: ./gateway/
+          push: true
+          tags: closedeyevisuals/taski_gateway:latest
